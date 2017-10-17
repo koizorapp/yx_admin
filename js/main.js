@@ -1149,7 +1149,7 @@ $('body').on('click', '.am-checkbox', function(e) {
             });
         });
     }
-    console.log(e.target.value, $(e.target).data('id'));
+    // console.log(e.target.value, $(e.target).data('id'));
     $('.am-table-sort-list ul li').removeClass('active');
     reSortArr();
 });
@@ -1175,7 +1175,8 @@ function saveListArr () {
     $.each($('.am-table-sort-list ul'), function(index, val) {
         arr.push([]);
         $.each($(val).find('li'), function(i, v) {
-            arr[index].push({id: $(v).data('id'), name: $(v).text()});
+            var name = $(v).text().split(',')[1];
+            arr[index].push({id: $(v).data('id'), name: name.substr(0, name.length - 1)});
         });
     });
     win.module_list_arr = arr;
