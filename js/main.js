@@ -640,6 +640,7 @@ $(function() {
 		            $.ajax({
 			            url: 'ajax.php',
 			            data: {
+                            name:name,
 			                names:win.module_list_arr,
 			                dpm:dpm,
 			                p_type:p_type,
