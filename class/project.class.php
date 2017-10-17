@@ -118,18 +118,30 @@ EOT;
 		$this->connect_mysql();
 		$sql="select `module` from `project` where `id`='{$id}'";
 		$res=$this->mysqli->query($sql);
+        $m_res = [];
 		if($res->num_rows>0){
 			$row=$res->fetch_array();
-			if(strstr($row['module'],"#")){
+
+            if(strstr($row['module'],"#")){
 				$m_arr=explode("#",$row['module']);
 				foreach($m_arr as $val){
 					$m_res[]=explode(",", $val);
 				}
 			}else{
 				if(strstr($row['module'],",")){
-					$m_res=explode(",",$row['module']);
+					$raw=explode(",",$row['module']);
+					foreach ($raw as $key => $value){
+                        if(strstr($value,"|")){
+                            $peers = explode("|",$value);
+                            foreach ($peers as $k => $v){
+                                $m_res[($key+1) . '_' . ($k+1)] = $v;
+                            }
+                        }else{
+                            $m_res[$key+1] = $value;
+                        }
+                    }
 				}else{
-					$m_res[]=$row['module'];
+					$m_res[1]=$row['module'];
 				}
 				
 			}
@@ -292,20 +304,20 @@ EOT;
 	}
 //////////////////////////////////////////获取执行流程的内容///////////////////////////////////////////////
 	public function get_executor_process($id){
-		$module_name=$this->get_project_module($id);
+        $new_array=$this->get_project_module($id);
 		$this->connect_mysql();
-		foreach($module_name as $val){
-			if(is_array($val)){
-				foreach ($val as $value) {
-					$new_array[]=$value;	
-				}
-			}else{
-				$new_array[]=$val;
-			}
-		}
+//		foreach($module_name as $val){
+//			if(is_array($val)){
+//				foreach ($val as $value) {
+//					$new_array[]=$value;
+//				}
+//			}else{
+//				$new_array[]=$val;
+//			}
+//		}
 		//print_r($module_name);
 		$i=1;
-		foreach($new_array as $val){
+		foreach($new_array as $key => $val){
 			$sql="select * from `module` where `name`='{$val}'";
 			$res=$this->mysqli->query($sql);
 			$row=$res->fetch_array();
@@ -315,7 +327,7 @@ EOT;
 				$result.=  "<tr ><th ></th><td colspan=\"5\" >";
 			}
 
-			$result.=  "<div><span class=\"am-badge  am-round\">{$i}</span> {$row['name']}</div>";
+			$result.=  "<div><span class=\"am-badge  am-round\">{$key}</span> {$row['name']}</div>";
 			if(strstr($row['device'],",")){
 				$device_arr=explode(",", $row['device']);
 				//$result.=  "<div ><a data-am-collapse=\"{target: '.collapse-nav{$i}'}\">{$device_arr[0]}</a><a class=\"am-nav am-collapse collapse-nav{$i}\">";
