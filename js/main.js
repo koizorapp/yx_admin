@@ -31,7 +31,14 @@ $(function() {
         });
     }
     /////////////////////////////////////登陆/退出//////////////////////////
-    // $('input[type=email], input[type=password]')
+    $('input[type="email"], input[type="password"]').on('keyup', function(e) {
+        e.preventDefault();
+        if (e.keyCode == 13) {
+            if (!!$('input[type="email"]').val() && !!$('input[type="password"]').val()) {
+                $('#login').trigger('click');
+            }
+        }
+    });
     $('#login').click(function(){	//登陆
     	$('#login_war').fadeOut();
     	var user=$('#user').val();
