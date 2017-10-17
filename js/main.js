@@ -635,6 +635,8 @@ $(function() {
 	            $("#m-p-last-sub").unbind("click");
 	            $("#m-p-last-sub").click(function(){
 		            progress.start();
+                    // console.log(win.module_list_arr);
+                    // return;
 		            $.ajax({
 			            url: 'ajax.php',
 			            data: {
@@ -1171,9 +1173,9 @@ function reSortArr () {
 function saveListArr () {
     var arr = [];
     $.each($('.am-table-sort-list ul'), function(index, val) {
-        arr.push({});
+        arr.push([]);
         $.each($(val).find('li'), function(i, v) {
-            arr[index] = {id: $(v).data('id'), name: $(v).text()};
+            arr[index].push({id: $(v).data('id'), name: $(v).text()});
         });
     });
     win.module_list_arr = arr;
