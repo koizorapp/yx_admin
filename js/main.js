@@ -478,6 +478,8 @@ $(function() {
 
     $('#m-p-module-add').unbind('click').click(function() { //项目添加中选择模块完成后点击添加按钮的操作
         var m_val = $('#m-p-module-val').val();
+        // 清空list
+        $('.am-table-sort-list').html('');
         if (m_val != "") {
             $.ajax({
                 url: 'ajax.php',
@@ -496,7 +498,6 @@ $(function() {
                         $('#m-p-final-module').val($('#m-p-module-val').val());
                         $('#m-p-module-val').val('');
                     }
-
                 }
 
             });
@@ -637,7 +638,7 @@ $(function() {
 		            $.ajax({
 			            url: 'ajax.php',
 			            data: {
-			                name:name,
+			                name:win.module_list_arr,
 			                dpm:dpm,
 			                p_type:p_type,
 			                mp_p:mp_p,
@@ -657,7 +658,8 @@ $(function() {
 			                	window.location.href = 'project_list.php?d='+msg;
 			                    
 			                }
-			                
+			             
+                            win.module_list_arr = [];  
 
 			            }
 
@@ -1162,12 +1164,19 @@ function reSortArr () {
             });
         }
     });
+    saveListArr();
 }
 
 // 存储数组
 function saveListArr () {
     var arr = [];
-    return arr;
+    $.each($('.am-table-sort-list ul'), function(index, val) {
+        arr.push({});
+        $.each($(val).find('li'), function(i, v) {
+            arr[index] = {id: $(v).data('id'), name: $(v).text()};
+        });
+    });
+    win.module_list_arr = arr;
 };
      
 ////////////////////////////////////////////////////编辑模块页面//////////////////////////////////////////////////
