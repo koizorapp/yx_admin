@@ -257,70 +257,8 @@ $m=new manage();
 
 										</table>
                                         <div class="am-table-sort-list">
-                                            <ul>
-                                                <li>
-                                                    <span>
-                                                        1-1,
-                                                        <font>测试数据11</font>
-                                                    </span>
-                                                    <a href="javascript: void(0)" class="am-close am-close-spin remove-list-item">&times;</a>
-                                                </li>
-                                            </ul>
-                                            <ul>
-                                                <li>
-                                                    <span title="sfsfasfsf">
-                                                        1-1,
-                                                        <font>测试数据11</font>
-                                                    </span>
-                                                    <a href="javascript: void(0)" class="am-close am-close-spin remove-list-item">&times;</a>
-                                                </li>
-                                                <li>
-                                                    <span>
-                                                        1-1,
-                                                        <font>测试数据11</font>
-                                                    </span>
-                                                    <a href="javascript: void(0)" class="am-close am-close-spin remove-list-item">&times;</a>
-                                                </li>
-                                            </ul>
+                                            
                                         </div>
-                                        <!-- ceshi -->
-                                        <table>
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                         <label for="">
-                                                            <input type="checkbox" class="am-checkbox" name="" value="test1">
-                                                            checkbox
-                                                        </label>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                         <label for="">
-                                                            <input type="checkbox" class="am-checkbox" name="" value="test2">
-                                                            checkbox
-                                                        </label>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <label for="">
-                                                            <input type="checkbox" class="am-checkbox" name="" value="test3">
-                                                            checkbox
-                                                        </label>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                         <label for="">
-                                                            <input type="checkbox" class="am-checkbox" name="" value="test4">
-                                                            checkbox
-                                                        </label>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <!-- ceshi -->
 										  <table class="am-table am-table-compact am-table-bordered am-table-radius am-table-striped am-table-hover" style="font-size:12px;width:1170px;">
 											<thead>
 												<tr style="display:none" id="m-p-filedCon-war">

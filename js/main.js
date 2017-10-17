@@ -1075,39 +1075,94 @@ $('body').on('click', '.am-table-sort-list ul li span', function(e) {
 // 删除
 $('body').on('click', '.remove-list-item', function(e) {
     e.preventDefault();
+    var arr = [];
     $(e.target).parents('ul').nextAll().remove();
     if ($(e.target).parents('ul').children().length == 1) {
         $(e.target).parents('ul').remove();
     } else {
         $(e.target).parents('li').remove();
     }
+    $.each($('.am-table-sort-list ul'), function(index, val) {
+         $.each($(val).find('li'), function(i, v) {
+             var id = $(v).data('id');
+             arr.push(id);
+         });
+    });
+    $.each($('.am-table-compact tbody tr'), function(index, val) {
+        if ($(val).find('input[type="checkbox"]').data('id') == undefined) {
+            return;
+        }
+        var item_id = $(val).find('input[type="checkbox"]').data('id');
+        if ($.inArray(item_id, arr) < 0) {
+            $(val).find('input[type="checkbox"]').prop('checked', false);
+        }
+    });
+    reSortArr();
 });
 // 选中item
 $('body').on('click', '.am-checkbox', function(e) {
     var is_checked = $(e.target).prop('checked'),
-        is_active = $('.am-table-sort-list ul li').hasClass('active');
-    var ul_item = '<ul>' +
-                        '<li>' +
-                        '<span>' + '1-1,' +
-                            '<font>测试数据11</font>' +
+        is_active = $('.am-table-sort-list ul li').hasClass('active'),
+        ul_index,
+        li_index;
+    var name = e.target.value;
+    var id = $(e.target).data('id');
+    if (is_checked == undefined || is_active == undefined) {
+        return;
+    }
+    if (is_checked && !is_active) {
+        ul_index = $('.am-table-sort-list ul').length + 1;
+        var ul_item = '<ul>' +
+                        '<li data-id="'+id+'">' +
+                        '<span>' + '<font>'+ul_index+'</font>' + ',' +
+                            '<font>'+name+'</font>' +
                         '</span>' +
                         '<a href="javascript: void(0)" class="am-close am-close-spin remove-list-item">&times;</a>' +
                     '</li>' +
                     '</ul>';
-    var li_item =  '<li>' +
-                    '<span>' + '1-2,' +
-                        '<font>测试数据11</font>' +
-                    '</span>' +
-                    '<a href="javascript: void(0)" class="am-close am-close-spin remove-list-item">&times;</a>' +
-                '</li>';
-    if (is_checked && !is_active) {
         $('.am-table-sort-list').append(ul_item);
     }
     if (is_checked && is_active) {
+        li_index = $('.am-table-sort-list .active').children('li').length + 1;
+        var li_item =  '<li data-id="'+id+'">' +
+                    '<span>' + '<font>'+li_index+'</font>' +',' +
+                        '<font>'+name+'</font>' +
+                    '</span>' +
+                    '<a href="javascript: void(0)" class="am-close am-close-spin remove-list-item">&times;</a>' +
+                '</li>';
         $('.am-table-sort-list ul .active').parents('ul').append(li_item);
     }
+    if (!is_checked) {
+        $.each($('.am-table-sort-list ul'), function(index, val) {
+            $.each($(val).find('li'), function(i, v) {
+                if ($(v).data('id') == id) {
+                    if ($(val).children('li').length == 1) {
+                        $(val).remove();
+                    } else {
+                        $(v).remove();
+                    }
+                }
+            });
+        });
+    }
+    console.log(e.target.value, $(e.target).data('id'));
     $('.am-table-sort-list ul li').removeClass('active');
+    reSortArr();
 });
+
+// 重新排序
+function reSortArr () {
+    $.each($('.am-table-sort-list ul'), function(index, val) {
+        if ($(val).children('li').length == 1) {
+            $(val).find('font').first().text(index + 1);
+        } else {
+            $(val).find('font').first().text(index + 1 + '-1');
+            $.each($(val).find('li'), function(i, v) {
+                $(v).find('font').first().text((index + 1) + '-' + (i + 1));
+            });
+        }
+    });
+}
 
 // 存储数组
 function saveListArr () {

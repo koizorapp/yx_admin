@@ -2063,9 +2063,10 @@ ul.tpl-dropdown-content li>a.tpl-dropdown-content-message:last-child {
     display: inline-block;
     float: left;
     padding-left: 3px;
-    max-width: 100px;
+    width: 100px;
     height: 26px;
     overflow: hidden;
+    text-align: left;
  }
  .am-table-sort-list ul li.active{
     background: #5eb95e;
