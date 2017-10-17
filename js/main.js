@@ -1,5 +1,9 @@
 $(function() {
-     $("#loading").fadeOut(1500);
+    // 定义全局变量
+    const win = {
+        module_list_arr: [],
+    };
+    $("#loading").fadeOut(1500);
     var progress = $.AMUI.progress;
     function is_num(inputId, warId) { //判断是否为数字的函数
         $(inputId).change(function() {
@@ -1060,7 +1064,56 @@ $(function() {
              })
       })
             
-           
+////////////////////////// 并行模块 //////////////////////////
+$('body').on('click', '.am-table-sort-list ul li span', function(e) {
+    e.preventDefault();
+    if ($(e.target).parents('li').prev('li').length) {
+        return false;
+    }
+    $(e.target).parents('li').addClass('active').siblings('li').removeClass('active').end().parents('ul').siblings().find('li').removeClass('active');
+});
+// 删除
+$('body').on('click', '.remove-list-item', function(e) {
+    e.preventDefault();
+    $(e.target).parents('ul').nextAll().remove();
+    if ($(e.target).parents('ul').children().length == 1) {
+        $(e.target).parents('ul').remove();
+    } else {
+        $(e.target).parents('li').remove();
+    }
+});
+// 选中item
+$('body').on('click', '.am-checkbox', function(e) {
+    var is_checked = $(e.target).prop('checked'),
+        is_active = $('.am-table-sort-list ul li').hasClass('active');
+    var ul_item = '<ul>' +
+                        '<li>' +
+                        '<span>' + '1-1,' +
+                            '<font>测试数据11</font>' +
+                        '</span>' +
+                        '<a href="javascript: void(0)" class="am-close am-close-spin remove-list-item">&times;</a>' +
+                    '</li>' +
+                    '</ul>';
+    var li_item =  '<li>' +
+                    '<span>' + '1-2,' +
+                        '<font>测试数据11</font>' +
+                    '</span>' +
+                    '<a href="javascript: void(0)" class="am-close am-close-spin remove-list-item">&times;</a>' +
+                '</li>';
+    if (is_checked && !is_active) {
+        $('.am-table-sort-list').append(ul_item);
+    }
+    if (is_checked && is_active) {
+        $('.am-table-sort-list ul .active').parents('ul').append(li_item);
+    }
+    $('.am-table-sort-list ul li').removeClass('active');
+});
+
+// 存储数组
+function saveListArr () {
+    var arr = [];
+    return arr;
+};
      
 ////////////////////////////////////////////////////编辑模块页面//////////////////////////////////////////////////
 	// var url=window.location.pathname;

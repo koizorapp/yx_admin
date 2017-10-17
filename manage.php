@@ -203,9 +203,10 @@ $m=new manage();
 										
 
 
-										<table class="am-table am-table-compact" style="font-size:12px;width:1170px;">
+										<table class="am-table am-table-compact" style="font-size:12px;width:1170px;margin-bottom: 0px;">
 											
-												<tr style="position:fixed;height:45px;z-index:9999" bgcolor="#fff">
+												<tr style="height:45px;z-index:9999" bgcolor="#fff">
+                                                    <!-- position:fixed; -->
 													<td >
 														<div style="width:1165px;background:#fff;-webkit-box-shadow:0px 2px 3px rgba(34,25,25,0.4);height:38px;">
 															<div style="width:1160px;">
@@ -255,7 +256,72 @@ $m=new manage();
 												</tr>
 
 										</table>
-										  <table class="am-table am-table-compact am-table-bordered am-table-radius am-table-striped am-table-hover" style="font-size:12px;width:1170px;margin-top:55px;">
+                                        <div class="am-table-sort-list">
+                                            <ul>
+                                                <li>
+                                                    <span>
+                                                        1-1,
+                                                        <font>测试数据11</font>
+                                                    </span>
+                                                    <a href="javascript: void(0)" class="am-close am-close-spin remove-list-item">&times;</a>
+                                                </li>
+                                            </ul>
+                                            <ul>
+                                                <li>
+                                                    <span title="sfsfasfsf">
+                                                        1-1,
+                                                        <font>测试数据11</font>
+                                                    </span>
+                                                    <a href="javascript: void(0)" class="am-close am-close-spin remove-list-item">&times;</a>
+                                                </li>
+                                                <li>
+                                                    <span>
+                                                        1-1,
+                                                        <font>测试数据11</font>
+                                                    </span>
+                                                    <a href="javascript: void(0)" class="am-close am-close-spin remove-list-item">&times;</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- ceshi -->
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                         <label for="">
+                                                            <input type="checkbox" class="am-checkbox" name="" value="test1">
+                                                            checkbox
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                         <label for="">
+                                                            <input type="checkbox" class="am-checkbox" name="" value="test2">
+                                                            checkbox
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="">
+                                                            <input type="checkbox" class="am-checkbox" name="" value="test3">
+                                                            checkbox
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                         <label for="">
+                                                            <input type="checkbox" class="am-checkbox" name="" value="test4">
+                                                            checkbox
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <!-- ceshi -->
+										  <table class="am-table am-table-compact am-table-bordered am-table-radius am-table-striped am-table-hover" style="font-size:12px;width:1170px;">
 											<thead>
 												<tr style="display:none" id="m-p-filedCon-war">
 													<th colspan="16" >
@@ -296,13 +362,6 @@ $m=new manage();
 													
 
                                  <div class="am-form-group" id="m-p-moule-list" style="display: none">
-																											      <label class="am-u-sm-3" ></label>
-																											      <div class="am-u-sm-9">
-																											      <select multiple class=""  data-am-selected="{btnWidth:300,btnSize: 'sm', btnStyle: 'secondary'}" placeholder="已选模块">
-																											      </select>
-																											      <input type="hidden" value="" id="m-p-final-module">
-																											     </div>
-																											    </div>
 
                                 <div class="am-form-group">
                                     <label  class="am-u-sm-3 am-form-label" >项目描述：</label>
