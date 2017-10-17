@@ -1,5 +1,6 @@
 <?php
 include("./class/project.class.php");
+error_reporting(E_ALL || ~E_NOTICE);
 $p = new project();
 // print_r($p->get_module_field(1,"function"));
 //$p->get_people(1);
