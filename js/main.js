@@ -31,6 +31,7 @@ $(function() {
         });
     }
     /////////////////////////////////////登陆/退出//////////////////////////
+    // $('input[type=email], input[type=password]')
     $('#login').click(function(){	//登陆
     	$('#login_war').fadeOut();
     	var user=$('#user').val();
