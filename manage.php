@@ -1,7 +1,5 @@
 <?php 
 include('./class/manage.class.php');
-//ini_set('display_errors',1);
-error_reporting(E_ALL || ~E_NOTICE);
 $m=new manage();
 ?>
 <!doctype html>
@@ -203,7 +201,7 @@ $m=new manage();
 										
 
 
-										<table class="am-table am-table-compact" style="font-size:12px;width:1170px;margin-bottom: 0px;">
+										<table class="am-table am-table-compact" style="font-size:12px;width:1170px; margin-bottom: 0px;">
 											
 												<tr style="height:45px;z-index:9999" bgcolor="#fff">
                                                     <!-- position:fixed; -->
@@ -256,10 +254,8 @@ $m=new manage();
 												</tr>
 
 										</table>
-                                        <div class="am-table-sort-list">
-                                            
-                                        </div>
-										  <table class="am-table am-table-compact am-table-bordered am-table-radius am-table-striped am-table-hover" style="font-size:12px;width:1170px;">
+                                        <div class="am-table-sort-list"></div>
+										  <table class="am-table am-table-compact am-table-bordered am-table-radius am-table-striped am-table-hover" style="font-size:12px;width:1170px;margin-top:35px;">
 											<thead>
 												<tr style="display:none" id="m-p-filedCon-war">
 													<th colspan="16" >
@@ -300,6 +296,13 @@ $m=new manage();
 													
 
                                  <div class="am-form-group" id="m-p-moule-list" style="display: none">
+																											      <label class="am-u-sm-3" ></label>
+																											      <div class="am-u-sm-9">
+																											      <select multiple class=""  data-am-selected="{btnWidth:300,btnSize: 'sm', btnStyle: 'secondary'}" placeholder="已选模块">
+																											      </select>
+																											      <input type="hidden" value="" id="m-p-final-module">
+																											     </div>
+																											    </div>
 
                                 <div class="am-form-group">
                                     <label  class="am-u-sm-3 am-form-label" >项目描述：</label>
