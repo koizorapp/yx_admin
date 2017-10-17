@@ -523,6 +523,20 @@ EOF;
 		$time=$_POST['time'];
 		$project_num=$this->get_project_num();
 		$project_num=$project_num+1;
+		//name
+        $name = $_POST['name'];
+        $module = '';
+        foreach ($name as $key => $value){
+            if(count($value) > 1){
+                foreach ($value as $k => $v){
+                    $module .= $v . '|';
+                }
+            }else{
+                $module .= $value[0]['name'];
+            }
+            $module .= $module . ',';
+        }
+        print_r($module);die;
 		$project_code=$this->get_code($dpm,"department")."-".$this->get_code($p_type,"classify")."-".$project_num;
 		$sql="insert into `project` (`code`,`name`,`dpm`,`type`,`mk_p`,`mb_p`,`describe`,`module`,`time`) values ('{$project_code}','{$name}','{$dpm}','{$p_type}',{$mp_p},{$mb_p},'{$describe}','{$module}',{$time})";
 	
