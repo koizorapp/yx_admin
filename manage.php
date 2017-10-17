@@ -564,7 +564,7 @@ $m=new manage();
                          <div style="margin-top:30px;" class="label-con" id="label-ry" >
                                <form class="am-form am-form-inline " role="form" >
                                <div class="am-form-group">
-                                  <select data-am-selected="{btnWidth:200,btnSize: 'sm'}" placeholder="所属部门(必选)" id="label-ry-dpm" class="am-input-sm">
+                                  <select data-am-selected="{btnWidth:200,maxHeight: 200,btnSize: 'sm'}" placeholder="所属部门(必选)" id="label-ry-dpm" class="am-input-sm">
                                             <option value=""></option>
                                              <?php $m->get_select("department","name","");?>
                                             </select> 
@@ -609,14 +609,14 @@ $m=new manage();
                               <div style="margin-top:30px;display: none;" class="label-con" id="label-sb" >
                                <form class=" am-form am-form-inline" role="form">
                                <div class="am-form-group">
-                                  <select data-am-selected="{btnWidth:100,btnSize: 'sm'}" placeholder="所属部门(必选)" class="am-input-sm" id="label-sb-dpm">
+                                  <select data-am-selected="{btnWidth:100,maxHeight: 200,btnSize: 'sm'}" placeholder="所属部门(必选)" class="am-input-sm" id="label-sb-dpm">
                                             <option value=""></option>
                                              <?php $m->get_select("department","name","");?>
                                             </select> 
                                </div>
 
                                <div class="am-form-group">
-                                  <select data-am-selected="{btnWidth:100,btnSize: 'sm'}" placeholder="摆放诊室" class="am-input-sm" id="label-sb-room">
+                                  <select multiple data-am-selected="{btnWidth:100,maxHeight: 200,btnSize: 'sm'}" placeholder="摆放诊室" class="am-input-sm" id="label-sb-room">
                                             <option value=""></option>
                                             <?php $m->get_select("room","name","");?>
                                             </select> 
@@ -687,7 +687,7 @@ $m=new manage();
                           <div style="margin-top:30px;display: none;" class="label-con" id="label-yp" >
                                <form class=" am-form am-form-inline" role="form">
                                <div class="am-form-group">
-                                  <select data-am-selected="{btnWidth:200,btnSize: 'sm'}" placeholder="所属部门(必选)" class="am-input-sm" id="label-yp-dpm">
+                                  <select data-am-selected="{btnWidth:200,maxHeight: 200,btnSize: 'sm'}" placeholder="所属部门(必选)" class="am-input-sm" id="label-yp-dpm">
                                             <option value=""></option>
                                              <?php $m->get_select("department","name","");?>
                                             </select> 
@@ -817,7 +817,7 @@ $m=new manage();
                           <div style="margin-top:30px;display: none;" class="label-con" id="label-xmlb" >
                                <form class=" am-form am-form-inline" role="form">
                                <div class="am-form-group">
-                                  <select data-am-selected="{btnWidth:200,btnSize: 'sm'}" placeholder="所属部门(必选)" class="am-input-sm" id="label-xmlb-dpm">
+                                  <select data-am-selected="{btnWidth:200,maxHeight: 200,btnSize: 'sm'}" placeholder="所属部门(必选)" class="am-input-sm" id="label-xmlb-dpm">
                                             <option value=""></option>
                                              <?php $m->get_select("department","name","");?>
                                             </select> 
