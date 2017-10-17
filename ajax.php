@@ -379,7 +379,7 @@ EOF;
 		if($res->num_rows>0){
 			while($row=$res->fetch_array()){
 				$result.="<tr>";
-				$result.="<td><label class=\"am-checkbox\"><input type=\"checkbox\"  class='m-p-checkbox' value=\"{$row['name']}\"data-am-ucheck></label></td>";
+				$result.="<td><label class=\"am-checkbox\"><input type=\"checkbox\"  class='m-p-checkbox' data-id=\"{$row['id']}\" value=\"{$row['name']}\"data-am-ucheck></label></td>";
 				$result.="<td style=\"word-break: keep-all;white-space:nowrap;\">{$row['number']}</td>";
 				$result.="<td style=\"word-break: keep-all;white-space:nowrap;\">{$row['dpm']}</td>";
 				$result.="<td style=\"word-break: keep-all;white-space:nowrap;\">{$row['name']}</td>";
