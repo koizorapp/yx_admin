@@ -1,4 +1,5 @@
-<?php 
+<?php
+error_reporting(E_ALL || ~E_NOTICE);
 include('./class/manage.class.php');
 $m=new manage();
 ?>
