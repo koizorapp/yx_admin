@@ -415,10 +415,18 @@ $(function() {
 
     $('#m-p-module-con').on('click', 'input[type=checkbox]',
     function() { //当在模块选择列表中选择模块获取数量及名称
+        var name_list = '';
         var len = $('#m-p-module-con').find("input[type=checkbox]:checked").length;
-        var m_name = "";
-        m_name = $(this).val();
-        $('#m-p-module-val').val($('#m-p-module-val').val() + "," + m_name);
+        $.each($('.am-table-compact tbody tr'), function(index, val) {
+            var is_checked = $(val).find('input[type=checkbox]').prop('checked');
+            if (is_checked == undefined) {
+                return;
+            }
+            if (is_checked) {
+                name_list += $(val).find('input[type=checkbox]').val() + ',';
+            }
+        });
+        $('#m-p-module-val').val(name_list.substr(0, name_list.length - 1));
         $('#m-p-c-moduleNum').text(len);
 
     })
@@ -1069,7 +1077,7 @@ $(function() {
              })
       })
             
-////////////////////////// 并行模块 //////////////////////////
+////////////////////////// 并行模块 start //////////////////////////
 $('body').on('click', '.am-table-sort-list ul li span', function(e) {
     e.preventDefault();
     if ($(e.target).parents('li').prev('li').length) {
@@ -1098,8 +1106,9 @@ $('body').on('click', '.remove-list-item', function(e) {
             return;
         }
         var item_id = $(val).find('input[type="checkbox"]').data('id');
-        if ($.inArray(item_id, arr) < 0) {
-            $(val).find('input[type="checkbox"]').prop('checked', false);
+        if ($.inArray(item_id, arr) < 0 && $(val).find('input[type="checkbox"]').prop('checked')) {
+            // $(val).find('input[type="checkbox"]').prop('checked', false);
+            $(val).find('input[type="checkbox"]').trigger('click');
         }
     });
     reSortArr();
@@ -1182,6 +1191,8 @@ function saveListArr () {
     });
     win.module_list_arr = arr;
 };
+
+//////////////////////// 并行模块 end /////////////////////////////////
      
 ////////////////////////////////////////////////////编辑模块页面//////////////////////////////////////////////////
 	// var url=window.location.pathname;
