@@ -171,12 +171,17 @@ EOT;
 				
 			}
 		}
+        $result = '';
 		$assemblage=array_unique($assemblage);
+		$assemblage = implode(',',$assemblage);
+		$assemblage = explode(',',$assemblage);
+		$assemblage = array_unique($assemblage);
 		foreach ($assemblage as $value) {
 			$result.=$value."、";
 		}
-			return rtrim(str_replace(",","、",$result),"、");
-	}	
+//        return trim(str_replace(",","、",$result),"、");
+        return trim($result,"、");
+	}
 //////////////////////////////获取项目所包含模块的年龄范围/////////////////////////////////////////////
 	private function get_age($id){
 		$module_name=$this->get_project_module($id);
