@@ -2000,11 +2000,14 @@ ul.tpl-dropdown-content li>a.tpl-dropdown-content-message:last-child {
     }
     .p-table-span div{
         float:left;
-        width:16.6%;
+        width:19.6%;
         overflow: hidden;
         word-wrap: normal;
         word-break: keep-all;
         text-overflow: ellipsis;
+    }
+    .p-table-span div:nth-child(4),.p-table-span div:nth-child(5){
+        width: 10%;
     }
      .p-table-span div p{
         line-height: 15px;
