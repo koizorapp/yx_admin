@@ -320,7 +320,8 @@ $(function() {
         var age_e = $('#m-m-age-e').val();
         var time = $('#m-m-time').val();
 
-        if (name != "" && dpm != "" && room != "" && exp != "" && device != "" && apl != "" && site != "" && fun != "" && idc != "" && ctd != "" && sex != null && (age_n != false || (age_e != "" && age_b != "")) && time != "") {
+        // if (name != "" && dpm != "" && room != "" && exp != "" && device != "" && apl != "" && site != "" && fun != "" && idc != "" && ctd != "" && sex != null && (age_n != false || (age_e != "" && age_b != "")) && time != "") {
+        if (true) {
             if ($('#m-wrning').length > 0) {
                 $('#m-wrning').remove();
             }
@@ -635,7 +636,8 @@ $(function() {
     	var describe=$('#m-p-describe').val(); //描述
     	var time=$('#m-p-time').val();
 
-    	if(name!="" && dpm!="" && p_type!="" && module!="" && time!=""){
+    	// if(name!="" && dpm!="" && p_type!="" && module!="" && time!=""){
+        if (true) {
     		 if ($('#p-wrning').length > 0) {
                 $('#p-wrning').remove();
 	            }
