@@ -302,7 +302,8 @@ EOT;
 		$title=array_unique($title);
 		foreach($title as $val){
 			//$result.="<button type=\"button\" class=\"am-btn am-btn-default am-radius am-btn-xs\" data-am-popover=\"{theme: 'success sm',content: '{$this->get_executor_name($val)}', trigger: 'hover focus'}\" style=\"margin-right:10px;\">{$val}</button>";
-			$result.="<span  style=\"margin-right:10px;\"><select multiple data-am-selected=\"{btnWidth: '100', btnSize: 'xs', btnStyle: 'success'}\" placeholder=\"{$val}\" >{$this->get_executor_name($val)}</select></span>";
+//			$result.="<span  style=\"margin-right:10px;\"><select multiple data-am-selected=\"{btnWidth: '100', btnSize: 'xs', btnStyle: 'success'}\" placeholder=\"{$val}\" >{$this->get_executor_name($val)}</select></span>";
+			$result.="<span  style=\"margin-right:10px;\"><select multiple data-am-selected=\"{btnWidth: 'auto', btnSize: 'xs', btnStyle: 'success'}\" placeholder=\"{$val}\" >{$this->get_executor_name($val)}</select></span>";
 		}
 		return $result;
 		
@@ -336,14 +337,14 @@ EOT;
 			if(strstr($row['device'],",")){
 				$device_arr=explode(",", $row['device']);
 				//$result.=  "<div ><a data-am-collapse=\"{target: '.collapse-nav{$i}'}\">{$device_arr[0]}</a><a class=\"am-nav am-collapse collapse-nav{$i}\">";
-				  $result.="<div ><select multiple data-am-selected=\"{btnWidth: '100', btnSize: 'xs'}\" placeholder=\"{$device_arr[0]}\" >";	
+				  $result.="<div ><select multiple data-am-selected=\"{btnWidth: 'auto', btnSize: 'xs'}\" placeholder=\"{$device_arr[0]}\" >";
 				array_shift($device_arr);
 				foreach($device_arr as $val){
 					$result.=  "<option value=\"{$val}\" disabled='disabled'>{$val}</option>";
 				}
 				$result.=  "</select></div>";
 			}else{
-				$result.=  "<div>{$row['device']}</div>";
+				$result.=  "<div>{$row['device']}&nbsp;</div>";
 			}
 			if(strstr($row['appliance'],",")){
 				$appliance_arr=explode(",", $row['appliance']);
@@ -355,11 +356,11 @@ EOT;
 				}
 				$result.=  "</select></div>";
 			}else{
-				$result.=  "<div>{$row['appliance']}</div>";
+				$result.=  "<div>{$row['appliance']}&nbsp;</div>";
 			}
 
                                     $result.= "<div>{$row['service_time']}分钟</div>";
-                                    $result.= "<div>{$row['room']}</div>";
+                                    $result.= "<div>{$row['room']}&nbsp;</div>";
                                     $result.="<div>";
                                     if(strstr($row['executor_title'],",")){
                                     	$executor_title_arr=explode(",", $row['executor_title']);
