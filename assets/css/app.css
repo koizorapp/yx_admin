@@ -1995,9 +1995,16 @@ ul.tpl-dropdown-content li>a.tpl-dropdown-content-message:last-child {
         word-wrap:break-word;white-space:normal;
         /*width:15%;*/
     }
+    .p-table-span span.am-round{
+        width: 30px;
+    }
     .p-table-span div{
         float:left;
-        width:15%;
+        width:16.6%;
+        overflow: hidden;
+        word-wrap: normal;
+        word-break: keep-all;
+        text-overflow: ellipsis;
     }
      .p-table-span div p{
         line-height: 15px;
