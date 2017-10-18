@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL || ~E_NOTICE);
 include("./class/module.class.php");
 $m = new module();
 
