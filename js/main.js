@@ -379,7 +379,7 @@ $(function() {
             if ($('#m-wrning').length > 0) {
 
 } else {
-                $('.am-g').after("<div class=\"am-alert am-alert-danger\" data-am-alert id=\"m-wrning\"><button type=\"button\" class=\"am-close\">&times;</button><p>错误：有未填写的项目，请检查无误后再提交！</p></div>");
+                $('.am-g').after("<div class=\"am-alert am-alert-danger\" style=\"position: fixed; width: 70%; top: 60px; z-index: 1;\" data-am-alert id=\"m-wrning\"><button type=\"button\" class=\"am-close\">&times;</button><p>错误：有未填写的项目，请检查无误后再提交！</p></div>");
 
             }
             //alert(0);
@@ -680,7 +680,7 @@ $(function() {
     		if ($('#p-wrning').length > 0) {
 
 			} else {
-                $('.am-g').after("<div class=\"am-alert am-alert-danger\" data-am-alert id=\"p-wrning\"><button type=\"button\" class=\"am-close\">&times;</button><p>错误：有未填写的项目，请检查无误后再提交！</p></div>");
+                $('.am-g').after("<div class=\"am-alert am-alert-danger\" style=\"position: fixed; width: 70%; top: 60px; z-index: 1;\" data-am-alert id=\"p-wrning\"><button type=\"button\" class=\"am-close\">&times;</button><p>错误：有未填写的项目，请检查无误后再提交！</p></div>");
 
             }
     	}
