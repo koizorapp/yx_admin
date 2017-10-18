@@ -154,6 +154,12 @@ $(function() {
 
     ///////////////////////////////////////////////////////////////////////
     /////////////////////////keyword页面查询//////////////////////////
+    $("#s-key-con").on('keyup', function(e) {
+        e.preventDefault();
+        if (e.keyCode == 13) {
+            $("#s-sub").trigger('click');
+        }
+    });
     $("#s-sub").click(function() {
 
         var s_title = $("#s-key-title").val();
