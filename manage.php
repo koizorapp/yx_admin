@@ -256,7 +256,8 @@ $m=new manage();
 
 										</table>
                                         <div class="am-table-sort-list"></div>
-										  <table class="am-table am-table-compact am-table-bordered am-table-radius am-table-striped am-table-hover" style="font-size:12px;width:1170px;margin-top:35px;">
+                                        <div style="height: 410px;width: 100%;overflow-y: scroll; border-top: 1px solid #fafafa;">
+										  <table class="am-table am-table-compact am-table-bordered am-table-radius am-table-striped am-table-hover" style="font-size:12px;width:1170px;">
 											<thead>
 												<tr style="display:none" id="m-p-filedCon-war">
 													<th colspan="16" >
@@ -289,6 +290,8 @@ $m=new manage();
 												
 											</tbody>
 										  </table>
+                                              
+                                          </div>
 										</div>
 									  </div>
 									</div>
