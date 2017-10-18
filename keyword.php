@@ -98,7 +98,7 @@ $k= new common();
                 <div class="note note-info" style="min-height:600px;">
                 <div class="portlet-title" style="border-bottom:1px solid #eef1f5;">
                     <div class="caption font-green bold">
-                        <span class="label label-sm label-success">关键字查询</span>
+                        <span class="label label-sm label-success" style="font-size: 22px;">搜索</span>
                 </div>
                 </div>
 
@@ -108,8 +108,8 @@ $k= new common();
                     </div>
                     <form class="am-form-inline" method="get" >
                         <div class="am-btn-group">
-                             <button type="button" class="am-btn am-btn-secondary am-radius" ><span class="am-icon-pencil"></span> 关键字</button>
-                                <select data-am-selected="{searchBox: 1,btnWidth: '120px'}" placeholder=" " name="key" id="s-key-title" style="width:50px">
+                             <!-- <button type="button" class="am-btn am-btn-secondary am-radius" ><!span class="am-icon-pencil"></span> 关键字</button> -->
+                                <select class="am-radius" data-am-selected="{searchBox: 1,btnWidth: '120px'}" placeholder=" " name="key" id="s-key-title" style="width:50px">
                                 <option value=""></option>
                                   <option value="mc">名称</option>
                                   <option value="zxr">执行人类型</option>
@@ -123,7 +123,7 @@ $k= new common();
                             
                             </div>
                             <div class="am-form-group">
-                                <input type="text" name="" class="am-form-field am-radius" style="width:200px;" id="s-key-con">
+                                <input type="text" name="" class="am-form-field am-radius" style="width:200px;" id="s-key-con" placeholder="关键字">
                             </div>
                             <button type="button" class="am-btn am-btn-success am-round" id="s-sub"><span class="am-icon-search" ></span> 查询</button>
                    
