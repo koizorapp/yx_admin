@@ -383,7 +383,7 @@ $m=new manage();
                                 <div class="am-form-group">
                                     <label for="user-phone" class="am-u-sm-3 am-form-label">执行诊室：</label>
                                     <div class="am-u-sm-9">
-                                        <select data-am-selected="{btnWidth:300,maxHeight: 200}"   placeholder=" " id="m-m-room">
+                                        <select multiple data-am-selected="{btnWidth:300,maxHeight: 200}"   placeholder=" " id="m-m-room">
                                         <option value=""></option>
                                           <?php $m->get_select("room","name","");?>
                                         </select> 
