@@ -191,13 +191,12 @@ EOF;
 		}else{
 			$str="";
 		}
-		//print_r($module_name);
-
 		if($str!="" && $this->s_title=="mc"){
-			$sql="select * from `project` where `name` like '%".$this->s_con."%' or `module` REGEXP '".$this->mysqli->real_escape_string($str)."'";	
+			$sql="select * from `project` where `name` like '%".$this->s_con."%' or `module` REGEXP '".$this->mysqli->real_escape_string($str)."'";
 		}elseif($str=="" && $this->s_title=="mc"){
 			$sql="select * from `project` where `name` like '%".$this->s_con."%'";
 		}elseif($str!="" && $this->s_title!="mc"){
+		    //搜索特殊处理
 			$sql="select * from `project` where `module` REGEXP '".$this->mysqli->real_escape_string($str)."'";
 		}elseif($str=="" && $this->s_title!="mc"){
 			$result.="<div class=\"am-alert am-alert-danger\" data-am-alert ><p>您所搜索的关键词\"{$this->s_con}\"没有找到结果！</p></div>";
@@ -529,9 +528,9 @@ EOF;
         foreach ($names as $key => $value){
             if(count($value) > 1){
                 foreach ($value as $k => $v){
-                    $str .= $v['name'] . '|';
+                    $str .= $v['name'] . '_';
                 }
-                $str = trim($str,'|');
+                $str = trim($str,'_');
             }else{
                 $str .= $value[0]['name'];
             }

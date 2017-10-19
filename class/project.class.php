@@ -131,8 +131,8 @@ EOT;
 				if(strstr($row['module'],",")){
 					$raw=explode(",",$row['module']);
 					foreach ($raw as $key => $value){
-                        if(strstr($value,"|")){
-                            $peers = explode("|",$value);
+                        if(strstr($value,"_")){
+                            $peers = explode("_",$value);
                             foreach ($peers as $k => $v){
                                 $m_res[($key+1) . '_' . ($k+1)] = $v;
                             }
@@ -360,7 +360,13 @@ EOT;
 			}
 
                                     $result.= "<div>{$row['service_time']}分钟</div>";
-                                    $result.= "<div>{$row['room']}&nbsp;</div>";
+//                                    $result.= "<div>{$row['room']}&nbsp;</div>";
+            $roomStr = explode(',',$row['room']);
+            $result .= "<div>";
+                                    foreach($roomStr as $val){
+                                        $result.=  "<p>{$val}</p>";
+                                    }
+            $result .= "</div>";
                                     $result.="<div>";
                                     if(strstr($row['executor_title'],",")){
                                     	$executor_title_arr=explode(",", $row['executor_title']);
