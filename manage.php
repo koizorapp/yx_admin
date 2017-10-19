@@ -302,7 +302,7 @@ $m=new manage();
                                  <div class="am-form-group" id="m-p-moule-list" style="display: none">
 																											      <label class="am-u-sm-3" ></label>
 																											      <div class="am-u-sm-9">
-																											      <select multiple class=""  data-am-selected="{btnWidth:300,btnSize: 'sm', btnStyle: 'secondary'}" placeholder="已选模块">
+																											      <select multiple class=""  data-am-selected="{btnWidth:300,btnSize: 'sm', btnStyle: 'secondary',maxHeight: 200}" placeholder="已选模块">
 																											      </select>
 																											      <input type="hidden" value="" id="m-p-final-module">
 																											     </div>

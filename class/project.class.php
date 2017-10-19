@@ -303,8 +303,11 @@ EOT;
 		foreach($title as $val){
 			//$result.="<button type=\"button\" class=\"am-btn am-btn-default am-radius am-btn-xs\" data-am-popover=\"{theme: 'success sm',content: '{$this->get_executor_name($val)}', trigger: 'hover focus'}\" style=\"margin-right:10px;\">{$val}</button>";
 //			$result.="<span  style=\"margin-right:10px;\"><select multiple data-am-selected=\"{btnWidth: '100', btnSize: 'xs', btnStyle: 'success'}\" placeholder=\"{$val}\" >{$this->get_executor_name($val)}</select></span>";
-			$result.="<span  style=\"margin-right:10px;\"><select multiple data-am-selected=\"{btnWidth: 'auto', btnSize: 'xs', btnStyle: 'success'}\" placeholder=\"{$val}\" >{$this->get_executor_name($val)}</select></span>";
+//			$result.="<span  style=\"margin-right:10px;\"><select multiple data-am-selected=\"{btnWidth: 'auto', btnSize: 'xs', btnStyle: 'success'}\" placeholder=\"{$val}\" >{$this->get_executor_name($val)}</select></span>";
+//			$result.="<span  style=\"margin-right:10px;\">{$this->get_executor_name($val)}</span>、";$val
+			$result.="<span  style=\"margin-right:10px;\">$val</span>、";
 		}
+		$result = trim($result,'、');
 		return $result;
 		
 	}
