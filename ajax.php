@@ -282,7 +282,7 @@ EOF;
 		$ctd=$this->format_val($_POST['ctd']);
 		$sex=$_POST['sex'];
 		$age_val=$_POST['age_val'];
-		$time=$_POST['time'];
+		$time=empty($_POST['time']) ? 0 : $_POST['time'];
 		$is_yl=$_POST['is_yl'];
 		if($age_val==0){
 			$age_b=$_POST['age_b'];
