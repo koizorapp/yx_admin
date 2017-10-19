@@ -107,22 +107,27 @@ class module extends common{
 				$device=explode(",", $row['device']);
 				if(count($device)>1){
 					foreach($device as $value){
-						$device_res.="<span class=\"m-table-span\">{$value}</span>";
+//						$device_res.="<span class=\"m-table-span\">{$value}</span>";
+						$device_res.="<span>{$value}</span> |";
 					}
 					
 				}else{
-					$device_res="<span class=\"m-table-span\">{$row['device']}</span>";
+//					$device_res="<span class=\"m-table-span\">{$row['device']}</span>";
+					$device_res="<span>{$row['device']}</span> |";
 				}
-
+                $device_res = trim($device_res,'|');
 				$appliance=explode(",", $row['appliance']);
 				if(count($appliance)>1){
 					foreach($appliance as $value){
-						$appliance_res.="<span class=\"m-table-span\">{$value}</span>";
+//						$appliance_res.="<span class=\"m-table-span\">{$value}</span>";
+						$appliance_res.="<span>{$value}</span> |";
 					}
 					
 				}else{
-					$appliance_res="<span class=\"m-table-span\">{$row['appliance']}</span>";
+//					$appliance_res="<span class=\"m-table-span\">{$row['appliance']}</span>";
+					$appliance_res="<span>{$row['appliance']}</span> |";
 				}
+				$appliance_res = trim($appliance_res,'|');
 				 $table_con=<<<EOT
 				 <tbody>
                                 <tr style="border-top:10px solid #EEEEEE;">
