@@ -1996,21 +1996,31 @@ ul.tpl-dropdown-content li>a.tpl-dropdown-content-message:last-child {
         /*width:15%;*/
     }
     .p-table-span span.am-round{
-        width: 30px;
+        width: 40px;
     }
     .p-table-span div{
         float:left;
-        width:19.6%;
-        overflow: hidden;
+        // width: 19.6%;
+        // overflow: hidden;
         word-wrap: normal;
         word-break: keep-all;
         text-overflow: ellipsis;
     }
-    .p-table-span div:nth-child(4),.p-table-span div:nth-child(5){
+    .p-table-span td div{
+        width: 19.6%;
+    }
+    .p-table-span td div:nth-child(4),.p-table-span td div:nth-child(5){
         width: 10%;
     }
      .p-table-span div p{
         line-height: 15px;
+    }
+    .p-table-span td span div{
+        width: 100%;
+    }
+    .am-selected-list .am-selected-text{
+        width: 100%;
+        // overflow: inherit;
     }
 .m-table-span{
         display:-moz-inline-box; 

@@ -349,7 +349,7 @@ EOT;
 			if(strstr($row['appliance'],",")){
 				$appliance_arr=explode(",", $row['appliance']);
 				//$result.=  "<div ><a data-am-collapse=\"{target: '.collapse-nav{$i}'}\">{$appliance_arr[0]}</a><a class=\"am-nav am-collapse collapse-nav{$i}\">";
-				$result.="<div ><select multiple data-am-selected=\"{btnWidth: '100', btnSize: 'xs'}\" placeholder=\"{$appliance_arr[0]}\" >";
+				$result.="<div ><select multiple data-am-selected=\"{btnWidth: 'auto', btnSize: 'xs'}\" placeholder=\"{$appliance_arr[0]}\" >";
 				array_shift($appliance_arr);
 				foreach($appliance_arr as $val){
 					$result.=  "<option value=\"{$val}\" disabled='disabled'>{$val}</option>";
@@ -366,11 +366,11 @@ EOT;
                                     	$executor_title_arr=explode(",", $row['executor_title']);
                                     	foreach ($executor_title_arr as $val) {
                                     		//$result.="<button type=\"button\" class=\"am-btn am-btn-default am-radius am-btn-xs\" data-am-popover=\"{theme: 'success sm',content: '{$this->get_executor_name($val)}', trigger: 'hover focus'}\" style=\"margin:5px 10px 5px 0px;\">{$val}</button>";
-                                    		$result.="<span  style=\"margin-right:10px;\"><select multiple data-am-selected=\"{btnWidth: '100', btnSize: 'xs', btnStyle: 'default'}\" placeholder=\"{$val}\" >{$this->get_executor_name($val)}</select></span>";
+                                    		$result.="<span  style=\"margin-right:10px;\"><select multiple data-am-selected=\"{btnWidth: 'auto', btnSize: 'xs', btnStyle: 'default'}\" placeholder=\"{$val}\" >{$this->get_executor_name($val)}</select></span>";
                                     	}
                                     }else{
                                     	//$result.="<button type=\"button\" class=\"am-btn am-btn-default am-radius am-btn-xs\" data-am-popover=\"{theme: 'success sm',content: '{$this->get_executor_name($row['executor_title'])}', trigger: 'hover focus'}\" style=\"margin:5px 10px 5px 0px;;\">{$row['executor_title']}</button>";
-                                    	$result.="<span  style=\"margin-right:10px;\"><select multiple data-am-selected=\"{btnWidth: '100', btnSize: 'xs', btnStyle: 'success'}\" placeholder=\"{$row['executor_title']}\" >{$this->get_executor_name($row['executor_title'])}</select></span>";
+                                    	$result.="<span  style=\"margin-right:10px;\"><select multiple data-am-selected=\"{btnWidth: 'auto', btnSize: 'xs', btnStyle: 'success'}\" placeholder=\"{$row['executor_title']}\" >{$this->get_executor_name($row['executor_title'])}</select></span>";
                                     }
 
                                     $result.= "</div></td>";

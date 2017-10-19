@@ -97,11 +97,11 @@ class module extends common{
 				if(count($executor)>1){
 					foreach ($executor as  $value) {
 						//$executor_res.="<button type=\"button\" class=\"am-btn am-btn-default am-radius am-btn-xs\" data-am-popover=\"{theme: 'success sm',content: '{$this->get_executor_name($value)}', trigger: 'hover focus'}\" style=\"margin-right:10px;\">{$value}</button>";
-						$executor_res.="<span  style=\"margin-right:10px;\"><select multiple data-am-selected=\"{btnWidth: '100', btnSize: 'xs', btnStyle: 'success'}\" placeholder=\"{$value}\">{$this->get_executor_name($value)}</select></span>";
+						$executor_res.="<span  style=\"margin-right:10px;\"><select multiple data-am-selected=\"{btnWidth: 'auto', btnSize: 'xs', btnStyle: 'success'}\" placeholder=\"{$value}\">{$this->get_executor_name($value)}</select></span>";
 					}
 				}else{
 					//$executor_res.="<button type=\"button\" class=\"am-btn am-btn-default am-radius am-btn-xs\" data-am-popover=\"{theme: 'success sm',content: '{$this->get_executor_name($row['executor_title'])}', trigger: 'hover focus'}\" style=\"margin-right:10px;\">{$row['executor_title']}</button>";
-					$executor_res.="<select multiple data-am-selected=\"{btnWidth: '100', btnSize: 'xs', btnStyle: 'primary'}\" placeholder=\"{$row['executor_title']}\">{$this->get_executor_name($row['executor_title'])}</select>";
+					$executor_res.="<select multiple data-am-selected=\"{btnWidth: 'auto', btnSize: 'xs', btnStyle: 'primary'}\" placeholder=\"{$row['executor_title']}\">{$this->get_executor_name($row['executor_title'])}</select>";
 				}
 
 				$device=explode(",", $row['device']);
