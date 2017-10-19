@@ -309,9 +309,14 @@ $(function() {
     is_num("#m-m-time", "#m-m-module-time-war"); //判断输入的时间是否为数字
 
     $('#m-m-sub').click(function() { //当点击提交按钮时的检查及数据提交
+        var room_list = $('#m-m-room').val();
+        var rooms = '';
+        $.each(room_list, function(index, val) {
+            rooms += val + ',';
+        });
         var name = $('#m-m-name').val();
         var dpm = $('#m-m-dpm').val();
-        var room = $('#m-m-room').val();
+        var room = rooms.substr(0, rooms.length - 1);
         var exp = $('#m-m-exp').val();
         var device = $('#m-m-device').val();
         var apl = $('#m-m-apl').val();
@@ -325,6 +330,9 @@ $(function() {
         var age_b = $('#m-m-age-b').val();
         var age_e = $('#m-m-age-e').val();
         var time = $('#m-m-time').val();
+
+        // console.log(room);
+        // return;
 
         // if (name != "" && dpm != "" && room != "" && exp != "" && device != "" && apl != "" && site != "" && fun != "" && idc != "" && ctd != "" && sex != null && (age_n != false || (age_e != "" && age_b != "")) && time != "") {
         if (true) {
