@@ -1997,6 +1997,8 @@ ul.tpl-dropdown-content li>a.tpl-dropdown-content-message:last-child {
     }
     .p-table-span span.am-round{
         width: 40px;
+        position: absolute;
+        left: 0;
     }
     .p-table-span div{
         float:left;
@@ -2007,9 +2009,13 @@ ul.tpl-dropdown-content li>a.tpl-dropdown-content-message:last-child {
         text-overflow: ellipsis;
     }
     .p-table-span td div{
-        width: 19.6%;
+        width: 17.6%;
     }
-    .p-table-span td div:nth-child(4),.p-table-span td div:nth-child(5){
+    .p-table-span td div:nth-child(1){
+        position: relative;
+        padding-left: 43px;
+    }
+    .p-table-span td div:nth-child(4){
         width: 10%;
     }
      .p-table-span div p{
