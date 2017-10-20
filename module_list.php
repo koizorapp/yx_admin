@@ -258,12 +258,12 @@ $m = new module();
                         </a>
                         <ul class="tpl-left-nav-sub-menu" <?php if($_GET['d']=='YXJCZX'){echo "style=\"display: block;\"";}?>>
                             <li>
-                                <a href="project_list.php?d=YXJCZX" <?php if($_GET['d']=='YXJCZX'){echo "class=\"nav-link active\"";}?>>
+                                <a href="project_list.php?d=YXJCZX" >
                                     <i class="am-icon-angle-right"></i>
                                     <span>项目列表</span>
                                 </a>
 
-                                <a href="module_list.php?d=YXJCZX" >
+                                <a href="module_list.php?d=YXJCZX" <?php if($_GET['d']=='YXJCZX'){echo "class=\"nav-link active\"";}?>>
                                     <i class="am-icon-angle-right"></i>
                                     <span>模块列表</span>
                                 </a>
@@ -306,7 +306,6 @@ $m = new module();
                             </thead>
                             <tbody>
                                <?php
-
                                 $m->get_module_list();
                                ?>
                             </tbody>

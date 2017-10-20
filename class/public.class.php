@@ -26,7 +26,10 @@ class common extends connect{
 				$this->d="抗衰老中心";
 			}elseif($dp=="QKMZZX"){
 				$this->d="全科门诊中心";
-			}
+			}elseif($dp=="YXJCZX"){
+                $this->d="医学检测中心";
+            }
+
 		}
 		// session_start();
 		// if($_SESSION['chk']!="ok"){
