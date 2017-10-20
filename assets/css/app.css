@@ -2011,9 +2011,13 @@ ul.tpl-dropdown-content li>a.tpl-dropdown-content-message:last-child {
     .p-table-span td div{
         width: 17.6%;
     }
-    .p-table-span td div:nth-child(1){
+    .p-table-span td>div:nth-child(1){
         position: relative;
         padding-left: 43px;
+        overflow: hidden;
+    }
+    .p-table-span td>div:nth-child(2){
+        overflow: hidden;
     }
     .p-table-span td div:nth-child(4){
         width: 10%;
