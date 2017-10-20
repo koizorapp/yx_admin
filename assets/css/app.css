@@ -2017,7 +2017,8 @@ ul.tpl-dropdown-content li>a.tpl-dropdown-content-message:last-child {
         overflow: hidden;
     }
     .p-table-span td>div:nth-child(2){
-        overflow: hidden;
+        // overflow: hidden;
+        word-wrap: break-word;
     }
     .p-table-span td div:nth-child(4){
         width: 10%;
