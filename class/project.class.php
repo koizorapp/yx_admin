@@ -367,7 +367,7 @@ EOT;
             $roomStr = explode(',',$row['room']);
             $result .= "<div>";
                                     foreach($roomStr as $val){
-                                        $result.=  "<p>{$val}</p>";
+                                        $result.=  "<p>{$val}&nbsp;</p>";
                                     }
             $result .= "</div>";
                                     $result.="<div>";
